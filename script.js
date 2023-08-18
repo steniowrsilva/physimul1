@@ -35,6 +35,8 @@ function drawAll(){
     ctx.closePath();
     ctx.stroke();
 
+    // ctx.arc(500, 300, raio, 0, Math.PI);
+
     // preenchimento da rampa
     ctx.beginPath();
     ctx.moveTo(50 + r_dx, 50 + r_dy);
@@ -149,7 +151,7 @@ function drawAll(){
     //----------------------------------------------------
     //---------------------VETOR NORMAL-------------------
     //----------------------------------------------------
-    let normal = massa*g*Math.cos(phi);
+    let normal = massa*g*Math.sin(-angle);
     ctx.beginPath();
     ctx.moveTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + dX,
                 (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + dY);
@@ -174,6 +176,14 @@ function drawAll(){
     ctx.stroke();
     ctx.closePath();
 
+    ctx.beginPath();
+    ctx.arc(620, 400, 80, Math.PI, Math.PI + 0.34); 
+    ctx.stroke();
+    
+    ctx.fillStyle = 'black';
+    ctx.font = "15px Arial";
+    ctx.fillText("θ", 525, 390);
+
     //----------------------------------------------------
     //---------------------LEGENDAS--------------------------
     //----------------------------------------------------
@@ -186,17 +196,17 @@ function drawAll(){
 
     ctx.fillStyle = 'black';
     ctx.font = "15px Arial";
-    ctx.fillText("P", 70 + dX, 290 + dY);
+    ctx.fillText("P", 70 + dX, 280 + dY);
     ctx.font = "15px Arial";
-    ctx.fillText("→", 70 + dX, 280 + dY);
+    ctx.fillText("→", 70 + dX, 270 + dY);
 
     ctx.fillStyle = 'black';
     ctx.font = "15px Arial";
-    ctx.fillText("mgcos(θ)", 110 + dX, 200 + dY);
+    ctx.fillText("mgsenθ", 110 + dX, 200 + dY);
 
     ctx.fillStyle = 'black';
     ctx.font = "15px Arial";
-    ctx.fillText("mgsen(θ)", 0 + dX, 260 + dY);
+    ctx.fillText("mgcosθ", 0 + dX, 260 + dY);
 
     // Atualizar o tempo e as posições
     t += 0.1; // Incrementar o tempo (ajuste conforme necessário)
