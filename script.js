@@ -104,44 +104,44 @@ function drawAll(){
     // COMPONENTE X
     let pesoX = massa*g*Math.cos(-angle);
     ctx.beginPath();
-    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx, caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy);
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle));
+    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + dX, caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle) + dY);
     ctx.strokeStyle = 'green';
     ctx.lineWidth = 3;
     ctx.stroke();
     ctx.closePath();
     // cabeça da componente x
     ctx.beginPath();
-    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle));
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle) + cabeca*Math.cos(3*Math.PI/2 + angle - phi),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle) + cabeca*Math.sin(3*Math.PI/2 + angle - phi));
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle));
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle) + cabeca*Math.cos(-Math.PI/2 + angle + phi),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle) + cabeca*Math.sin(-Math.PI/2 + angle + phi));
+    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle) + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle) + cabeca*Math.cos(3*Math.PI/2 + angle - phi) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle) + cabeca*Math.sin(3*Math.PI/2 + angle - phi) + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle) + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoX*Math.cos(Math.PI/2 + angle) + cabeca*Math.cos(-Math.PI/2 + angle + phi) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoX*Math.sin(Math.PI/2 + angle) + cabeca*Math.sin(-Math.PI/2 + angle + phi) + dY);
     ctx.stroke();
     ctx.closePath();
 
     // COMPONENTE Y
     let pesoY = massa*g*Math.sin(-angle);
     ctx.beginPath();
-    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx, caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy);
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle));
+    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + dX, caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle) + dY);
     ctx.stroke();
     ctx.closePath();
     //cabeça componente Y
     ctx.beginPath();
-    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle));
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle) + cabeca*Math.cos(angle + phi),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle) + cabeca*Math.sin(angle + phi));
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle));
-    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle) + cabeca*Math.cos(angle - phi),
-               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle) + cabeca*Math.sin(angle - phi));
+    ctx.moveTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle) + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle) + cabeca*Math.cos(angle + phi) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle) + cabeca*Math.sin(angle + phi) + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle) + dY);
+    ctx.lineTo(caudaX*Math.cos(Math.PI/2 + angle)+50 + r_dx + pesoY*Math.cos(Math.PI + angle) + cabeca*Math.cos(angle - phi) + dX,
+               caudaY*Math.sin(Math.PI/2 + angle)+50 + r_dy + pesoY*Math.sin(Math.PI + angle) + cabeca*Math.sin(angle - phi) + dY);
     ctx.stroke();
     ctx.closePath();
 
