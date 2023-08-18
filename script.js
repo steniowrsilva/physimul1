@@ -22,8 +22,6 @@ function updatePositions() {
 
 function drawAll(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-
     //----------------------------------------------------
     //---------------------RAMPA--------------------------
     //----------------------------------------------------
@@ -191,6 +189,14 @@ function drawAll(){
     ctx.fillText("P", 70 + dX, 290 + dY);
     ctx.font = "15px Arial";
     ctx.fillText("→", 70 + dX, 280 + dY);
+
+    ctx.fillStyle = 'black';
+    ctx.font = "15px Arial";
+    ctx.fillText("mgcos(θ)", 110 + dX, 200 + dY);
+
+    ctx.fillStyle = 'black';
+    ctx.font = "15px Arial";
+    ctx.fillText("mgsen(θ)", 0 + dX, 260 + dY);
 
     // Atualizar o tempo e as posições
     t += 0.1; // Incrementar o tempo (ajuste conforme necessário)
