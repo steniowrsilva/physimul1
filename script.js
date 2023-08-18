@@ -151,10 +151,10 @@ function drawAll(){
     //----------------------------------------------------
     let normal = massa*g*Math.cos(phi);
     ctx.beginPath();
-    ctx.moveTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx,
-                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy);
-    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle),
-                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle));
+    ctx.moveTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + dX,
+                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + dY);
+    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle) + dX,
+                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle) + dY);
     ctx.lineWidth = 2;
     ctx.strokeStyle = 'black';
     ctx.stroke();
@@ -162,14 +162,14 @@ function drawAll(){
 
     //cabeça do vetor
     ctx.beginPath();
-    ctx.moveTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle),
-                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle));
-    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle) + cabeca*Math.cos(Math.PI+angle + phi),
-                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle) + cabeca*Math.sin(Math.PI+angle + phi));
-    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle),
-                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle));
-    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle) + cabeca*Math.cos(Math.PI+angle - phi),
-                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle) + cabeca*Math.sin(Math.PI+angle - phi));
+    ctx.moveTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle) + dX,
+                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle) + dY);
+    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle) + cabeca*Math.cos(Math.PI+angle + phi) + dX,
+                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle) + cabeca*Math.sin(Math.PI+angle + phi) + dY);
+    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle) + dX,
+                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle) + dY);
+    ctx.lineTo((b_size/2)*Math.cos(Math.PI/2 + angle) + b_size*Math.cos(angle)+50 + r_dx + normal*Math.cos(angle) + cabeca*Math.cos(Math.PI+angle - phi) + dX,
+                (b_size/2)*Math.sin(Math.PI/2 + angle) + b_size*Math.sin(angle)+50 + r_dy + normal*Math.sin(angle) + cabeca*Math.sin(Math.PI+angle - phi) + dY);
     ctx.lineWidth = 2;
     ctx.stroke();
     ctx.closePath();
