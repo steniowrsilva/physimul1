@@ -22,6 +22,8 @@ function updatePositions() {
 
 function drawAll(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
     //----------------------------------------------------
     //---------------------RAMPA--------------------------
     //----------------------------------------------------
@@ -173,6 +175,22 @@ function drawAll(){
     ctx.lineWidth = 2;
     ctx.stroke();
     ctx.closePath();
+
+    //----------------------------------------------------
+    //---------------------LEGENDAS--------------------------
+    //----------------------------------------------------
+    ctx.fillStyle = 'black';
+    ctx.font = "15px Arial";
+    ctx.fillText("N", 130 + dX, 20 + dY);
+    ctx.fillStyle = 'black';
+    ctx.font = "15px Arial";
+    ctx.fillText("→", 130 + dX, 10 + dY);
+
+    ctx.fillStyle = 'black';
+    ctx.font = "15px Arial";
+    ctx.fillText("P", 70 + dX, 290 + dY);
+    ctx.font = "15px Arial";
+    ctx.fillText("→", 70 + dX, 280 + dY);
 
     // Atualizar o tempo e as posições
     t += 0.1; // Incrementar o tempo (ajuste conforme necessário)
