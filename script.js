@@ -316,22 +316,6 @@ let lastTimestamp = 0;
 requestAnimationFrame(update);
 
 
-//----------------------------------------------------
-//---------------------ANIMAÇÃO-----------------------
-//----------------------------------------------------
-
-// function update(){
-//     updatePositions();
-//     t+=0.1;
-//     drawAll();
-//     if (t <= maxTime) { // t <= maxTime ; x <= x_max ; T <= T_max
-//         requestAnimationFrame(update);
-
-//     }
-// }
-
-// update();
-
 
 
 
