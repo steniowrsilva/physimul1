@@ -76,8 +76,8 @@ function drawAll() {
     //---------------------RAMPA--------------------------
     //----------------------------------------------------
     // rampa
-    let r_dx = 0;
-    let r_dy = 170;
+    let r_dx = -10;
+    let r_dy = 145;
     ctx.beginPath(); // o primeiro ponto e o angulo (CA) que tem que serem mudados
     ctx.moveTo(50 + r_dx, 300 + r_dy - CA); //
     ctx.lineTo(600 + r_dx, 300 + r_dy);
@@ -239,24 +239,24 @@ function drawAll() {
     //----------------------------------------------------
     ctx.fillStyle = 'black';
     ctx.font = "17px Arial";
-    ctx.fillText("N", 130 + dX, 300 + r_dy - CA - 130 + dY); // 20 - 150 = -130 // 300 + r_dy - CA - 130
+    ctx.fillText("N", 130 + r_dx + dX, 300 + r_dy - CA - 130 + dY); // 20 - 150 = -130 // 300 + r_dy - CA - 130
     ctx.fillStyle = 'black';
     ctx.font = "17px Arial";
-    ctx.fillText("→", 130 + dX, 300 + r_dy - CA - 140 + dY); // 10 - 150 = -140 //  300 + r_dy - CA - 140
+    ctx.fillText("→", 130 + r_dx + dX, 300 + r_dy - CA - 140 + dY); // 10 - 150 = -140 //  300 + r_dy - CA - 140
 
     ctx.fillStyle = 'black';
     ctx.font = "17px Arial";
-    ctx.fillText("P", 70 + dX, 300 + r_dy - CA + 130 + dY); // 280 - 150 = 130 // 300 + r_dy - CA + 130
+    ctx.fillText("P", 70 + r_dx + dX, 300 + r_dy - CA + 130 + dY); // 280 - 150 = 130 // 300 + r_dy - CA + 130
     ctx.font = "17px Arial";
-    ctx.fillText("→", 70 + dX, 300 + r_dy - CA + 120 + dY); // 270 - 150 = 120 // 300 + r_dy - CA + 120
+    ctx.fillText("→", 70 + r_dx + dX, 300 + r_dy - CA + 120 + dY); // 270 - 150 = 120 // 300 + r_dy - CA + 120
 
     ctx.fillStyle = 'black';
     ctx.font = "17px Arial";
-    ctx.fillText("mgsenα", 110 + dX, 270 + r_dy - CA + 50 + dY); // 200 - 150 = 50 // 300 + r_dy - CA + 50
+    ctx.fillText("mgsenα", 110 + r_dx + dX, 270 + r_dy - CA + 50 + dY); // 200 - 150 = 50 // 300 + r_dy - CA + 50
 
     ctx.fillStyle = 'black';
     ctx.font = "17px Arial";
-    ctx.fillText("mgcosα", 0 + dX, 300 + r_dy - CA + 110 + dY); // 260 - 150 = 110 // 300 + r_dy - CA + 110
+    ctx.fillText("mgcosα", 0 + r_dx + dX, 300 + r_dy - CA + 110 + dY); // 260 - 150 = 110 // 300 + r_dy - CA + 110
 
     if (CA == CA_20) {
         ctx.fillStyle = 'black';
