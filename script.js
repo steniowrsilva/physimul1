@@ -238,43 +238,58 @@ function drawAll() {
     //---------------------LEGENDAS--------------------------
     //----------------------------------------------------
     ctx.fillStyle = 'black';
-    ctx.font = "15px Arial";
+    ctx.font = "17px Arial";
     ctx.fillText("N", 130 + dX, 300 + r_dy - CA - 130 + dY); // 20 - 150 = -130 // 300 + r_dy - CA - 130
     ctx.fillStyle = 'black';
-    ctx.font = "15px Arial";
+    ctx.font = "17px Arial";
     ctx.fillText("→", 130 + dX, 300 + r_dy - CA - 140 + dY); // 10 - 150 = -140 //  300 + r_dy - CA - 140
 
     ctx.fillStyle = 'black';
-    ctx.font = "15px Arial";
+    ctx.font = "17px Arial";
     ctx.fillText("P", 70 + dX, 300 + r_dy - CA + 130 + dY); // 280 - 150 = 130 // 300 + r_dy - CA + 130
-    ctx.font = "15px Arial";
+    ctx.font = "17px Arial";
     ctx.fillText("→", 70 + dX, 300 + r_dy - CA + 120 + dY); // 270 - 150 = 120 // 300 + r_dy - CA + 120
 
     ctx.fillStyle = 'black';
-    ctx.font = "15px Arial";
-    ctx.fillText("mgsenα", 110 + dX, 300 + r_dy - CA + 50 + dY); // 200 - 150 = 50 // 300 + r_dy - CA + 50
+    ctx.font = "17px Arial";
+    ctx.fillText("mgsenα", 110 + dX, 270 + r_dy - CA + 50 + dY); // 200 - 150 = 50 // 300 + r_dy - CA + 50
 
     ctx.fillStyle = 'black';
-    ctx.font = "15px Arial";
+    ctx.font = "17px Arial";
     ctx.fillText("mgcosα", 0 + dX, 300 + r_dy - CA + 110 + dY); // 260 - 150 = 110 // 300 + r_dy - CA + 110
 
     if (CA == CA_20) {
         ctx.fillStyle = 'black';
-        ctx.font = "25px Arial";
-        ctx.fillText('α=20°', 650, 200);
+        ctx.font = "40px Arial";
+        ctx.fillText('α=20°', 450, 200);
     }
 
     if (CA == CA_15){
         ctx.fillStyle = 'black';
-        ctx.font = "25px Arial";
-        ctx.fillText('α=15°', 650, 200);
+        ctx.font = "40px Arial";
+        ctx.fillText('α=15°', 450, 200);
     }
 
     if (CA == CA_10){
         ctx.fillStyle = 'black';
-        ctx.font = "25px Arial";
-        ctx.fillText('α=10°', 650, 200);
+        ctx.font = "40px Arial";
+        ctx.fillText('α=10°', 450, 200);
     }
+
+    //texto acima
+
+    ctx.fillStyle = 'red';
+    ctx.font = "20px Arial";
+
+    ctx.fillText("N = Psenα = mgsenα", 250, 30);
+
+    ctx.fillText("F = Pcosα = mgcosα", 250, 55);
+
+    ctx.fillText("F/m = a = gsenα", 250, 80);
+
+    ctx.fillText("v = gsen(α)t", 250, 105);
+
+    ctx.fillText("x = 0,5gsen(α)t²", 250, 130);
 
 }
 

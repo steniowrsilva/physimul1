@@ -1,5 +1,10 @@
+.title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: xx-large;
+}
 #canvas {
-    border: 5px solid black;
+    border: 10px solid black;
     margin: 0 auto;
     border-radius: 20px;
     display: block;
