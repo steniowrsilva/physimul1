@@ -76,7 +76,7 @@ function drawAll() {
     //---------------------RAMPA--------------------------
     //----------------------------------------------------
     // rampa
-    let r_dx = -10;
+    let r_dx = 0;
     let r_dy = 145;
     ctx.beginPath(); // o primeiro ponto e o angulo (CA) que tem que serem mudados
     ctx.moveTo(50 + r_dx, 300 + r_dy - CA); //
