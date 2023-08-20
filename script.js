@@ -77,7 +77,7 @@ function drawAll() {
     //----------------------------------------------------
     // rampa
     let r_dx = 0;
-    let r_dy = 100;
+    let r_dy = 170;
     ctx.beginPath(); // o primeiro ponto e o angulo (CA) que tem que serem mudados
     ctx.moveTo(50 + r_dx, 300 + r_dy - CA); //
     ctx.lineTo(600 + r_dx, 300 + r_dy);
@@ -227,12 +227,12 @@ function drawAll() {
     ctx.closePath();
 
     ctx.beginPath();
-    ctx.arc(603, 400, 80, Math.PI, 3 * Math.PI / 2 + angle);
+    ctx.arc(603 + r_dx, 300 + r_dy, 80, Math.PI, 3 * Math.PI / 2 + angle);
     ctx.stroke();
 
     ctx.fillStyle = 'black';
     ctx.font = "15px Arial";
-    ctx.fillText("α", 509, 395);
+    ctx.fillText("α", 509 + r_dx, 295 + r_dy);
 
     //----------------------------------------------------
     //---------------------LEGENDAS--------------------------

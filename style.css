@@ -1,9 +1,26 @@
 #canvas {
-    border: 1px solid black;
+    border: 5px solid black;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: block;
+}
+
+#legenda-botoes {
+    font-size:x-large;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#botoes {
+    text-align: center;
 }
 
 .botoes {
-    width: 100px;
-    height: auto;
+    --botoes-width: 100px;
+    width: var(--botoes-width);
+    height: calc(var(--botoes-width)/2);
     background-color: aqua;
+    font-size: larger;
+    border-radius: 10px;
+
 }
