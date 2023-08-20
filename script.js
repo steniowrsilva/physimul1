@@ -1,29 +1,77 @@
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
+const b20 = document.querySelector('#b20');
+const b15 = document.querySelector('#b15');
+const b10 = document.querySelector('#b10');
+
 //variáveis
 let CO = 550;
-let CA = 250;
+let CA = null;
+const CA_24_4 = 250;
+const CA_20 = 200;
+const CA_15 = 148;
+const CA_10 = 97;
+
+CA=CA_20;
+
 let angle = -Math.atan(CO / CA);
 let massa = 10;
 let g = 10;
-let t = 0; // Começar o tempo em 0
-let dS = 0; // Inicializar dS como 0
+let t = 0; 
+let dS = 0;
 let dX = 0;
 let dY = 0;
-const maxTime = 16.25; // Tempo máximo de 10 unidades
+
+let maxTime = null;
+const maxTime_24_4 = 16.4;
+const maxTime_20 = 17.8;
+const maxTime_15 = 20.15;
+const maxTime_10 = 24.25;
+
+maxTime = maxTime_20;
+
+function resetAndStartAnimation() {
+    t = 0;
+    dS = 0;
+    dX = 0;
+    dY = 0;
+    update();
+}
+
+b20.addEventListener('click', function() {
+    CA = CA_20; // Altera o valor de CA para CA_20
+    angle = -Math.atan(CO / CA); // Calcula o novo ângulo com base no novo CA
+    maxTime = maxTime_20; // Atualiza o maxTime se necessário
+    resetAndStartAnimation(); // Redesenha a cena com a nova inclinação
+});
+
+b15.addEventListener('click', function() {
+    CA = CA_15; // Altera o valor de CA para CA_20
+    angle = -Math.atan(CO / CA); // Calcula o novo ângulo com base no novo CA
+    maxTime = maxTime_15; // Atualiza o maxTime se necessário
+    resetAndStartAnimation(); // Redesenha a cena com a nova inclinação
+});
+
+b10.addEventListener('click', function() {
+    CA = CA_10; // Altera o valor de CA para CA_20
+    angle = -Math.atan(CO / CA); // Calcula o novo ângulo com base no novo CA
+    maxTime = maxTime_10; // Atualiza o maxTime se necessário
+    resetAndStartAnimation(); // Redesenha a cena com a nova inclinação
+});
+
 
 function updatePositions() {
     // Atualizar dS, dX e dY de acordo com o tempo t
     dS = (0.5 * g * Math.cos(-angle)) * (t ** 2);
     dX = dS * Math.cos(Math.PI / 2 + angle);
     dY = dS * Math.sin(Math.PI / 2 + angle);
-
-    // Limitar o tempo ao valor máximo
-    //t = Math.min(t, maxTime);
 }
 
 function drawAll() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
     //----------------------------------------------------
     //---------------------RAMPA--------------------------
     //----------------------------------------------------
@@ -210,28 +258,66 @@ function drawAll() {
     ctx.font = "15px Arial";
     ctx.fillText("mgcosα", 0 + dX, 300 + r_dy - CA + 110 + dY); // 260 - 150 = 110 // 300 + r_dy - CA + 110
 
-    //--------------------------------------------------
-    // Atualizar o tempo e as posições------------------
-    //--------------------------------------------------
+    if (CA == CA_20) {
+        ctx.fillStyle = 'black';
+        ctx.font = "25px Arial";
+        ctx.fillText('α=20°', 650, 200);
+    }
 
+    if (CA == CA_15){
+        ctx.fillStyle = 'black';
+        ctx.font = "25px Arial";
+        ctx.fillText('α=15°', 650, 200);
+    }
 
-    t += 0.1;
-
-    updatePositions();
-
-    if (t <= maxTime) {
-        requestAnimationFrame(drawAll);
-
+    if (CA == CA_10){
+        ctx.fillStyle = 'black';
+        ctx.font = "25px Arial";
+        ctx.fillText('α=10°', 650, 200);
     }
 
 }
+
+const targetFrameRate = 60; // Desired frame rate (e.g., 30 frames per second)
+const frameInterval = 1000 / targetFrameRate; // Time interval between frames in milliseconds
+
+function update(timestamp) {
+    updatePositions();
+    drawAll();
+
+    if (t <= maxTime) {
+        const elapsed = timestamp - lastTimestamp;
+
+        if (elapsed > frameInterval) {
+            lastTimestamp = timestamp;
+            t += 0.1;
+        }
+
+        requestAnimationFrame(update);
+    }
+}
+
+let lastTimestamp = 0;
+requestAnimationFrame(update);
 
 
 //----------------------------------------------------
 //---------------------ANIMAÇÃO-----------------------
 //----------------------------------------------------
 
-drawAll();
+// function update(){
+//     updatePositions();
+//     t+=0.1;
+//     drawAll();
+//     if (t <= maxTime) { // t <= maxTime ; x <= x_max ; T <= T_max
+//         requestAnimationFrame(update);
+
+//     }
+// }
+
+// update();
+
+
 
 
 
