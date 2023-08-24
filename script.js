@@ -281,11 +281,11 @@ function drawAll() {
     ctx.fillStyle = 'red';
     ctx.font = "20px Arial";
 
-    ctx.fillText("N = Psenα = mgsenα", 250, 30);
+    ctx.fillText("N = Pcosα = mgcos(α)", 250, 30);
 
-    ctx.fillText("F = Pcosα = mgcosα", 250, 55);
+    ctx.fillText("F = Psenα = mgsen(α)", 250, 55);
 
-    ctx.fillText("F/m = a = gsenα", 250, 80);
+    ctx.fillText("F/m = a = gsen(α)", 250, 80);
 
     ctx.fillText("v = gsen(α)t", 250, 105);
 
